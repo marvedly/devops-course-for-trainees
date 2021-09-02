@@ -1,4 +1,7 @@
-dist: trusty
+sudo: required
+
+services:
+  - docker
 
 language: node_js
 
@@ -8,9 +11,12 @@ node_js:
 jobs:
   include:
     - stage: test react app
+      before_scripts:
+      - npm install
+      script:
       - npm test
-    - stage: build react app
-      - npm run build
+      after_success:
+      - echo "yay!"
     - stage: build docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
