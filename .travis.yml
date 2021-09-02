@@ -1,7 +1,16 @@
 dist: trusty
 
+language: node_js
+
+node_js:
+ - "14"
+
 jobs:
   include:
+    - stage: test react app
+      - npm test
+    - stage: build react app
+      - npm run build
     - stage: build docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
