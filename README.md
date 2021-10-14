@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/marvedly/devops-course-for-trainees.svg?branch=main)](https://app.travis-ci.com/marvedly/devops-course-for-trainees)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
